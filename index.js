@@ -25,8 +25,10 @@ app.post("/course-info", (req, res) => {
       return res.status(400).json({ message: "Course is invalid" });
     }
   }
-  
+
   return res.json(match.groups);
 });
 
-app.listen(3000, () => console.log("Now listening on port 3000"));
+app.listen(process.env.PORT || 3000, () =>
+  console.log("Now listening on port 3000")
+);
